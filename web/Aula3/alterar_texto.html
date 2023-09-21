@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Texto</title>
+</head>
+<body>
+    <button id="btn">Clique para alterar o texto</button>
+    <p id="paragrafo">Texto inicial</p>
+
+    <script>
+        const btn=document.getElementById("btn")
+        const paragrafo=document.getElementById("paragrafo")
+
+        btn.addEventListener("click", ()=> {
+            paragrafo.textContent="Texto Alterado"
+        });
+    </script>
+</body>
+</html>

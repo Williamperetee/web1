@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="relogio"></p>
+
+    <script>
+        function atulizarRelogio(){
+            const agora= new Date()
+            const horas=agora.getHours()
+            const minutos=agora.getMinutes()
+            const segundos=agora.getSeconds()
+            const horaFormatada=`${horas}:${minutos}:${segundos}`
+            const relogio=document.getElementById("relogio")
+            relogio.textContent=horaFormatada
+        }
+        setInterval(atulizarRelogio, 1000)//o setInterval()metodo chama uma funcao em 
+        // intervalos especificos (em milisegundos), 1 segundo=1000 milessegundos
+    </script>
+</body>
+</html>

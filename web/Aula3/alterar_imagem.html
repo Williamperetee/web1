@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alterar Imagem</title>
+</head>
+<body>
+    <button id="btn">Trocar Imagem</button>
+    <img id="imagem1" src="https://images.pexels.com/photos/17244813/pexels-photo-17244813/free-photo-of-retroiluminado-iluminado-por-tras-praia-litoral.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" alt="Imagem 1" style="display: none;">
+    <img id="imagem2" src="https://4.bp.blogspot.com/-3YwFT7wiDnE/VT5NLGC20qI/AAAAAAABC8Y/tQcMBoQkbEk/s1600/adffb142a07755f9fc4e1400e3491ae32.jpg" alt="Imagem 2" style="display: none;">
+
+    <script>
+        const btn=document.getElementById("btn")
+        const imagem1=document.getElementById("imagem1")
+        const imagem2=document.getElementById("imagem2")
+        let exibindoImagem1=true
+
+        btn.addEventListener("click", ()=>{
+            if(exibindoImagem1){
+                imagem1.style.display="block"
+                imagem2.style.display="none"
+            }else{
+                imagem1.style.display="none"
+                imagem2.style.display="block"
+            }
+            exibindoImagem1=!exibindoImagem1
+        })
+    </script>
+    
+</body>
+</html>

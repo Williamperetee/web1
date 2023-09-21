@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cronômetro</title>
+</head>
+<body>
+  <h1>Cronômetro</h1>
+  <p id="timer">00:00:00</p>
+  <button id="startButton">Iniciar</button>
+  <button id="stopButton">Parar</button>
+  <button id="resetButton">Reiniciar</button>
+
+  <script>
+    let startTime = 0;
+    let intervalId;
+    let running = false;
+
+    function startTimer() {
+      if (!running) {
+        startTime = Date.now() - startTime;
+        intervalId = setInterval(updateTimer, 1000);
+        running = true;
+      }
+    }
+
+    function stopTimer() {
+      clearInterval(intervalId);
+      running = false;
+    }
+
+    function resetTimer() {
+      clearInterval(intervalId);
+      running = false;
+      startTime = 0;
+      updateTimer();
+    }
+
+    function updateTimer() {
+      const currentTime = Date.now() - startTime;
+      const totalSeconds = Math.floor(currentTime / 1000);
+      const hours = Math.floor(totalSeconds / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+      document.getElementById("timer").textContent =
+        `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    }
+
+    document.getElementById("startButton").addEventListener("click", startTimer);
+    document.getElementById("stopButton").addEventListener("click", stopTimer);
+    document.getElementById("resetButton").addEventListener("click", resetTimer);
+  </script>
+</body>
+</html>
